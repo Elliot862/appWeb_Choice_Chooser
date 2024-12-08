@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ajouter une Activité</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="title">Titre de l'activité :</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <button type="submit">Ajouter</button>
+    </form>
+{% endblock %}

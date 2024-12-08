@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Liste des Activités</h1>
+    <ul class="activity-list">
+        {% for activity in activities %}
+            <li class="activity-item">
+                {{ activity.title }}
+                <small>Créé le : {{ activity.created_at|date:"d/m/Y"}}</small>
+                <form method="post" action="{% url 'activity_delete' activity.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette activité ?')">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

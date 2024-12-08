@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activités Aléatoires</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'activity_list' %}">Liste</a>
+        <a href="{% url 'activity_create' %}">Ajouter</a>
+        <a href="{% url 'random_activity' %}">Activité aléatoire</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
