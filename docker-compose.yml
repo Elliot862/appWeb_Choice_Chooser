@@ -5,7 +5,8 @@ services:
     build:
       context: .
       dockerfile: dockers/web/Dockerfile
-    container_name: django-app
+    image: elliot63/choice_chooser_app:latest
+    container_name: choice_chooser_app
     restart: always
     ports:
       - "8000:8000"
@@ -25,7 +26,8 @@ services:
     build:
       context: .
       dockerfile: dockers/db/Dockerfile
-    container_name: django-db
+    image: elliot63/choice_chooser_db:v1.0
+    container_name: choice_chooser_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
